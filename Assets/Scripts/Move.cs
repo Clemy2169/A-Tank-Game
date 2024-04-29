@@ -9,7 +9,8 @@ public class Move : MonoBehaviour
     [SerializeField] private float maxSpeed = 10;
     [SerializeField] private float rotationSpeed = 25;
     [SerializeField] private GameObject tete;
-
+    [SerializeField] private GameObject Projectile;
+    [SerializeField] private GameObject BaseProjectile;
     
     private Transform localTransform;
 
@@ -17,6 +18,8 @@ public class Move : MonoBehaviour
     private float forwardBackwardAxis;
     private Vector2 mouseVector;
     public float tetespeed;
+    
+    
     
 
     // Start is called before the first frame update
@@ -41,6 +44,17 @@ public class Move : MonoBehaviour
 
     }
 
+    public void HandleTire(InputAction.CallbackContext inputContext)
+    {
+        if (inputContext.started)
+        {
+            GameObject clone = Instantiate(Projectile, BaseProjectile.transform.position, BaseProjectile.transform.rotation);
+            clone.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
+        }
+    }
+    
+    
+    
     public void HandleRotate(InputAction.CallbackContext inputContext)
     {
         rotateAxis = inputContext.ReadValue<float>();

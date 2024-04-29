@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "TIREEE",
+                    "type": "Button",
+                    "id": "8bd2f863-5a94-49da-b080-f43bcaaf92bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -176,6 +185,17 @@
                     "action": "COCKpit",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "55084fad-942f-432f-aed7-e724a0aa45a0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TIREEE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
